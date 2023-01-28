@@ -23,39 +23,52 @@ class NotesController extends Controller
         
         $result=$user->save();
         if($result){
-            return ['result'=>'data has been saved'];
+            return redirect('create');
         }
         else{
             return ['result'=>'data has not been saved :('];
     
         }
 }
+public function getHome(){
+
+    $user = Notes::get();
+
+    return View('view',compact('user'));
+}
 
 function delete($id){
     $user=Notes::find($id);
-    $result=$user->delete();
-    if($result){
-        return["result"=>"record has been deleted"];
-    }
-    else{
-        return["result"=>"something went wrong :("];
-
-    }
+    $user->delete();
     
+    // $result=$user->delete();
+return redirect('/get');
+    // if($result){
+    //     return["result"=>"record has been deleted"];
+    // }
+    // else{
+    //     return["result"=>"something went wrong :("];
+
+    // }
+    
+}
+
+function edit(Request $req){
+    $user=Notes::find($req->id);
+    return view('edit',['user'=>$user]);
+    
+  
 }
 function update(Request $req){
     $user=Notes::find($req->id);
     $user->id=$req->id;
     $user->title=$req->title;
     $user->description=$req->description;
-   
-    $result=$user->save();
-    if($result){
-        return["result"=>"data is updated"];
-    }
-    else{
-        return["result"=>"data is not updated :("];
+   $user->save();
+   return redirect('/get');
 
-    }
+}
+function create(){
+    return view('add');
 }
 }

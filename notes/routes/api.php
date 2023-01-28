@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('list',[NotesController::class,'list']);
-Route::post('notes',[NotesController::class,'add']);
-Route::delete('delete/{id}',[NotesController::class,'delete']);
-Route::put('update',[NotesController::class,'update']);
+// Route::get('list',[NotesController::class,'list']);
+// Route::post('notes',[NotesController::class,'add']);
+// Route::delete('delete/{id}',[NotesController::class,'delete']);
+// Route::put('update',[NotesController::class,'update']);
 
 
 

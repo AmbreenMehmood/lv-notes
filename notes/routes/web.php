@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NotesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/create',[NotesController::class,'create']);
+Route::get('list',[NotesController::class,'list']);
+Route::get('/get',[NotesController::class,'getHome']);
+Route::post('add',[NotesController::class,'add'])->name('add');
+Route::get('delete/{id}',[NotesController::class,'delete']);
+
+Route::get('edit/{id}',[NotesController::class,'edit']);
+Route::post('edit',[NotesController::class,'update']);
+
+
