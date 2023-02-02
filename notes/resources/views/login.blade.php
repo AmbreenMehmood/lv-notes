@@ -10,7 +10,11 @@
 
 </head>
 <body>
-<form action="" method="post">
+<form action="{{route('login2')}}" method="post">
+  @csrf
+  @if(Session::has('fail'))
+  <div class="alert alert-danger">{{Session::get('fail')}}</div>
+  @endif
 <h1 class="text-center mt-5">LOGIN</h1>
 
   <div class="mb-3">

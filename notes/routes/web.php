@@ -30,4 +30,9 @@ Route::post('edit',[NotesController::class,'update']);
 Route::get('user',[UserController::class,'signup']);
 Route::post('signup',[UserController::class,'postsignup'])->name('signup');
 Route::get('login',[UserController::class,'login']);
+Route::post('login2',[UserController::class,'login2'])->name('login2');
+Route::get('/logout',[UserController::class,'logout']);
+
+
+
 

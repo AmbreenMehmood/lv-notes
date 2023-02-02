@@ -12,19 +12,25 @@
 <body>
 <form action="{{url('/signup') }}" method="post">
     @csrf
+    @if(Session::has('success'))
+    <div class="alert alert-success">{{Session::get('success')}}</div>
+    @endif
+    @if(Session::has('fail'))
+    <div class="alert alert-danger">{{Session::get('fail')}}</div>
+    @endif
 <h1 class="text-center mt-5">SIGN UP</h1>
 <div class="mb-3">
     <label for="username" class="form-label mx-4 mt-5">User Name</label>
-    <input type="text" class="form-control mx-4" name="username">
+    <input type="text" class="form-control mx-4" name="username" required>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label mx-4 ">Email address</label>
-    <input type="email"  name="email" class="form-control mx-4" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" required  name="email" class="form-control mx-4" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text mx-4">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label mx-4">Password</label>
-    <input type="password" name="password" class="form-control mx-4" id="exampleInputPassword1">
+    <input type="password" required name="password" class="form-control mx-4" id="exampleInputPassword1">
   </div>
  
   <button type="submit" class="btn btn-primary mx-4">Submit</button>
