@@ -10,7 +10,6 @@
 
 </head>
 <body>
-  
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Notes</a>
@@ -26,30 +25,26 @@
           <a class="nav-link active" aria-current="page" href="/create">add notes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/logout">logout</a>
+          <a class="nav-link active" aria-current="page" href="/login">logout</a>
         </li>
-
       </ul>
     </div>
   </div>
 </nav>
 <!-- <h1 class="m-5">Add Notes</h1> -->
+<div class="container w-50">
   <form action="{{url('/add') }}" method="post">
   @csrf
   <div class="mb-3">
-    <label for="example" class="form-label m-4">title</label>
+    <label for="example" class="form-label mt-5"><h3>Title</h3> </label>
     <input type="text" name="title" class="form-control m-1" id="" aria-describedby="emailHelp" required>
-    
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label m-4">Description</label>
+    <label for="exampleInputPassword1" class="form-label "> <h3>Description</h3> </label>
     <textarea name="description"  class="form-control m-1"  cols="30" rows="10" required></textarea>
-    
   </div>
- 
   <button type="submit" class="btn btn-primary m-4">Submit</button>
-
-
   </form>
+</div>
 </body>
 </html>

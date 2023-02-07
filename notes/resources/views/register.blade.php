@@ -10,6 +10,7 @@
 
 </head>
 <body>
+  <div class="container w-50">
 <form action="{{url('/signup') }}" method="post">
     @csrf
     @if(Session::has('success'))
@@ -17,11 +18,13 @@
     @endif
     @if(Session::has('fail'))
     <div class="alert alert-danger">{{Session::get('fail')}}</div>
+    
     @endif
 <h1 class="text-center mt-5">SIGN UP</h1>
 <div class="mb-3">
     <label for="username" class="form-label mx-4 mt-5">User Name</label>
     <input type="text" class="form-control mx-4" name="username" required>
+   
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label mx-4 ">Email address</label>
@@ -37,5 +40,6 @@
   <a href="/login">Already have an account? login here !!!</a>
 
 </form>
+</div>
 </body>
 </html>

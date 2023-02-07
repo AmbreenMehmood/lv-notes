@@ -25,6 +25,9 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/create">add notes</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/login">logout</a>
+        </li>
        
        
       </ul>
@@ -42,7 +45,7 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label m-4">Description</label>
-    <textarea name="description"  class="form-control m-4" value="{{$user['description']}}" cols="30" rows="10" required></textarea>
+   <input type="textarea" name="description"  class="form-control m-4" value="{{$user['description']}}" cols="30" rows="10" required></textarea>
 
   </div>
  

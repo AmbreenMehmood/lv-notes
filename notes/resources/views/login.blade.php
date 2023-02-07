@@ -10,6 +10,7 @@
 
 </head>
 <body>
+  <div class="container w-50">
 <form action="{{route('login2')}}" method="post">
   @csrf
   @if(Session::has('fail'))
@@ -30,6 +31,6 @@
   <button type="submit" class="btn btn-primary mx-4">Submit</button>
   <a href="/user">don't have an account? signup here !!!</a>
 </form>
-
+</div>
 </body>
 </html>

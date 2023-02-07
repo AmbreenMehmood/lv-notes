@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\NotesController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,6 @@ Route::get('list',[NotesController::class,'list']);
 Route::get('/get',[NotesController::class,'getHome']);
 Route::post('add',[NotesController::class,'add'])->name('add');
 Route::get('delete/{id}',[NotesController::class,'delete']);
-
 Route::get('edit/{id}',[NotesController::class,'edit']);
 Route::post('edit',[NotesController::class,'update']);
 
@@ -32,6 +32,9 @@ Route::post('signup',[UserController::class,'postsignup'])->name('signup');
 Route::get('login',[UserController::class,'login']);
 Route::post('login2',[UserController::class,'login2'])->name('login2');
 Route::get('/logout',[UserController::class,'logout']);
+
+Route::get('/cart',[ProductsController::class,'cart']);
+
 
 
 
